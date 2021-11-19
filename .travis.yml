@@ -1,0 +1,17 @@
+{
+  "language": "node_js",
+  "env": [
+    "DATABASE_URL=postgresql://postgres@localhost:5432/frtdb_test"
+  ],
+  "node_js": [
+    "12"
+  ],
+  "before_script": [
+    "psql -c 'create database  frtdb_test;' -U postgres",
+    "psql -U postgres -d frtdb_test -a -f sql/create-tables.sql",
+    "psql -U postgres -d frtdb_test -a -f sql/insert-data.sql"
+  ],
+  "services": [
+    "postgresql"
+  ]
+}
