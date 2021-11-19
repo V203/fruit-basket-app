@@ -2,9 +2,9 @@ const assert = require("assert");
 const FruitBasket = require("../fruit-basket-service");
 const pg = require("pg");
 const Pool = pg.Pool;
-require('dotenv').config()
+// require('dotenv').config()
 
-const connectionString = process.env.DATABASE_URL  // your database URL here
+const connectionString = process.env.DATABASE_URL  || 'postgresql://codex-coder:pg123@localhost:5432/frtdb_test'
 
 const pool = new Pool({
     connectionString

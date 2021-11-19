@@ -1,8 +1,21 @@
 const express = require('express');
 const exphbs  = require('express-handlebars');
 
+const pg = require("pg");
+const Pool = pg.Pool;
+
 const app = express();
 const PORT =  process.env.PORT || 3017;
+
+const connectionString = process.env.DATABASE_URL || 'postgresql://codex-coder:pg123@localhost:5432/frtdb';
+
+let useSSL = false;
+
+const pool = new Pool({
+    connectionString,
+    ssl : useSSL
+  });
+  
 
 // enable the req.body object - to allow us to use HTML forms
 app.use(express.json());
