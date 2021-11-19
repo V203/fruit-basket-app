@@ -46,4 +46,3 @@ These screencasts will be published soon...
 
 
 
-[![Build Status](https://app.travis-ci.com/V203/fruit-basket-app-I.svg?branch=main)](https://app.travis-ci.com/V203/fruit-basket-app-I)
